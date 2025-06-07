@@ -6,3 +6,11 @@ pyttsx3==2.90
 SpeechRecognition==3.10.0
 python-jose==3.3.0
 jinja2==3.1.2 
+opencv-python
+deepface
+tensorflow
+keras
+numpy
+matplotlib
+pillow
+gdown
