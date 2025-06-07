@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Mental Wellness Assistant - Your Path to Inner Peace</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/landing.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-brain"></i>
+                <span>A-Zentrix</span>
+            </div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#testimonials">Testimonials</a>
+                <button class="nav-cta" onclick="startChat()">Get Started</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Your AI-Powered Path to Inner Peace</h1>
+                <p>Chat with our intelligent wellness assistant that listens, understands, and supports your mental well-being.</p>
+                <button class="cta-button" onclick="startChat()">
+                    Get Started
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+            <div class="hero-image">
+                <img src="{{ url_for('static', path='/images/hero-illustration.svg') }}" alt="AI Wellness Assistant">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="section-container">
+            <h2>About Our AI Assistant</h2>
+            <p>Experience the future of mental wellness support with our advanced AI chatbot. Using cutting-edge technology, we provide personalized emotional support and guidance whenever you need it.</p>
+            <div class="capabilities">
+                <div class="capability">
+                    <i class="fas fa-smile"></i>
+                    <h3>Emotion Detection</h3>
+                    <p>Real-time analysis of your emotional state</p>
+                </div>
+                <div class="capability">
+                    <i class="fas fa-microphone"></i>
+                    <h3>Voice Interaction</h3>
+                    <p>Natural conversation through voice commands</p>
+                </div>
+                <div class="capability">
+                    <i class="fas fa-robot"></i>
+                    <h3>AI Support</h3>
+                    <p>24/7 intelligent responses and guidance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="section-container">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-theater-masks"></i>
+                    <h3>Real-time Emotion Detection</h3>
+                    <p>Advanced facial recognition to understand your emotional state</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-microphone-alt"></i>
+                    <h3>Voice-based Conversation</h3>
+                    <p>Natural interaction through voice commands</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>24/7 AI Support</h3>
+                    <p>Always available to provide guidance and support</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Privacy Focused</h3>
+                    <p>Your conversations are secure and confidential</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="section-container">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Start</h3>
+                    <p>Begin your wellness journey with a simple click</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Talk</h3>
+                    <p>Share your thoughts through text or voice</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Get Support</h3>
+                    <p>Receive personalized guidance and support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="section-container">
+            <h2>What Our Users Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="quote">"This chatbot really helped me during a tough time. It's like having a supportive friend available 24/7."</div>
+                    <div class="author">- Priya, Student</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote">"The emotion detection feature is incredible. It understands exactly how I'm feeling."</div>
+                    <div class="author">- Michael, Software Engineer</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote">"A game-changer for mental wellness. The voice interaction makes it so natural to use."</div>
+                    <div class="author">- Sarah, Healthcare Professional</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="section-container">
+            <h2>Ready to Start Your Wellness Journey?</h2>
+            <p>Join thousands of users who have found peace and support through our AI assistant.</p>
+            <button class="cta-button" onclick="startChat()">
+                Get Started Now
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <i class="fas fa-brain"></i>
+                <span>A-Zentrix</span>
+            </div>
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="#about">About Us</a>
+                    <a href="#features">Features</a>
+                    <a href="#testimonials">Testimonials</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 A-Zentrix. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function startChat() {
+            window.location.href = '/chat';
+        }
+    </script>
+</body>
+</html> 

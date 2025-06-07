@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Mental Wellness Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h1>AI Assistant</h1>
+                <button id="new-chat" class="new-chat-btn">
+                    <span class="icon"><i class="fas fa-plus"></i></span> New Chat
+                </button>
+            </div>
+            
+            <div class="sidebar-sections">
+                <div class="section">
+                    <h3>Recent Chats</h3>
+                    <div class="conversation-list" id="conversation-list">
+                        <!-- Conversations will be listed here -->
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <h3>Quick Actions</h3>
+                    <div class="quick-actions">
+                        <button class="action-btn" id="emotion-quick-btn">
+                            <span class="icon"><i class="fas fa-smile"></i></span>
+                            Emotion Check
+                        </button>
+                        <button class="action-btn" id="voice-quick-btn">
+                            <span class="icon"><i class="fas fa-microphone"></i></span>
+                            Voice Chat
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar-footer">
+                <button id="settings-btn" class="settings-btn">
+                    <span class="icon"><i class="fas fa-cog"></i></span>
+                    Settings
+                </button>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <h2>Mental Wellness Assistant</h2>
+                    <div class="chat-actions">
+                        <button id="clear-chat" class="action-btn" title="Clear Chat">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                        <button id="export-chat" class="action-btn" title="Export Chat">
+                            <i class="fas fa-download"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="chat-messages" id="chat-messages">
+                    <div class="welcome-message">
+                        <h2>Welcome to your AI Mental Wellness Assistant</h2>
+                        <p>I'm here to provide emotional support and guidance. How can I help you today?</p>
+                        <div class="quick-start">
+                            <h3>Quick Start</h3>
+                            <div class="quick-start-options">
+                                <button class="quick-option" data-prompt="How are you feeling today?">
+                                    <i class="fas fa-heart"></i>
+                                    Check-in
+                                </button>
+                                <button class="quick-option" data-prompt="I'm feeling stressed">
+                                    <i class="fas fa-brain"></i>
+                                    Stress Relief
+                                </button>
+                                <button class="quick-option" data-prompt="I need motivation">
+                                    <i class="fas fa-star"></i>
+                                    Motivation
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="input-container">
+                    <div class="input-wrapper">
+                        <textarea id="message-input" placeholder="Type your message here..." rows="1"></textarea>
+                        <button id="voice-btn" class="voice-btn" title="Voice Command">
+                            <span class="icon"><i class="fas fa-microphone"></i></span>
+                        </button>
+                        <button id="send-btn" class="send-btn" title="Send Message">
+                            <span class="icon"><i class="fas fa-paper-plane"></i></span>
+                        </button>
+                    </div>
+                    <div class="input-info">
+                        <button id="emotion-btn" class="emotion-btn">
+                            <span class="icon"><i class="fas fa-smile"></i></span> Detect Emotion
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Settings</h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="setting-group">
+                    <h3>Appearance</h3>
+                    <div class="setting-item">
+                        <label>Theme</label>
+                        <select id="theme-select">
+                            <option value="dark">Dark</option>
+                            <option value="light">Light</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="setting-group">
+                    <h3>Voice Settings</h3>
+                    <div class="setting-item">
+                        <label>Voice Speed</label>
+                        <input type="range" id="voice-speed" min="0.5" max="2" step="0.1" value="1">
+                    </div>
+                </div>
+                <div class="setting-group">
+                    <h3>Chat Settings</h3>
+                    <div class="setting-item">
+                        <label>Message History</label>
+                        <select id="history-limit">
+                            <option value="10">Last 10 messages</option>
+                            <option value="20">Last 20 messages</option>
+                            <option value="50">Last 50 messages</option>
+                            <option value="all">All messages</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', path='/script.js') }}"></script>
+</body>
+</html> 
